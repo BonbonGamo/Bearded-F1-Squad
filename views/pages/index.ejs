@@ -22,12 +22,21 @@
 </div>
 <div id="nav-scrollspy" class="navbar transparent navbar-inverse navbar-fixed-top">
    <nav class="navbar-inner container-fluid">
-    <ul class="nav navbar-nav navbar-left">
-      <li><a class="nav-link" href="#">Info</a></li>
-      <li><a class="nav-link" href="#">Team</a></li>
-      <li><a class="nav-link" href="#">Gallery</a></li>
-      <li><a class="nav-link" href="#">Contact</a></li>
-    </ul>
+     <div class="container-fluid">
+       <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="border:none;">
+          <i class="fa fa-bars" id="nav-more" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+         <ul class="nav navbar-nav navbar-left">
+           <li><a class="nav-link" href="#">Info</a></li>
+           <li><a class="nav-link" href="#">Team</a></li>
+           <li><a class="nav-link" href="#">Gallery</a></li>
+           <li><a class="nav-link" href="#">Contact</a></li>
+         </ul>
+       </div>
+     </div>
    </nav>
 </div>
 <!-- LANDING -->
@@ -42,17 +51,24 @@
           </div>
           <div class="col-md-12">
             <center>
-              <img src="/build/img/bf1q_white_rgb_web.png" style="width:60%;">
+              <img src="/build/img/bf1q_white_rgb_web.png" style="width:60%;min-width:260px;">
             </center>
           </div>
-          <div class="col-md-2 text-center col-md-offset-3">
+          <div class="hide-1010 col-md-2 text-center col-md-offset-3">
             <h2><a class="halo-some" href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></h2>
           </div>
-          <div class="col-md-2 text-center">
+          <div class="hide-1010 col-md-2 text-center">
             <h2><a class="halo-some" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></h2>
           </div>
-          <div class="col-md-2 text-center">
+          <div class="hide-1010 col-md-2 text-center">
             <h2><a class="halo-some" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></h2>
+          </div>
+          <div class="col-md-12 show-1010">
+            <h3>
+              <a class="halo-some" href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+              <a class="halo-some" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              <a class="halo-some" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </h3>
           </div>
         </div>
       </div>

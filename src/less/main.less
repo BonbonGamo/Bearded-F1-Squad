@@ -40,6 +40,10 @@ p{
 #guy-message{
   margin:50px;
 }
+#nav-more{
+  font-size: 36px;
+  color:@yellow;
+}
 #triangle-bottomright {
   z-index:999;
   position: absolute;
@@ -248,8 +252,28 @@ p{
   position:relative;
 }
 /*MEDIA*/
-@media screen and (max-width: 991px) {
-    .hide-991 {
-        display: none;;
+@media screen and (max-width: 1010px) {
+    .hide-1010 {
+        display: none;
+    }
+    .show-1010 {
+        display:inline;
+    }
+    .halo-some{
+      font-size: 30px;
+      padding: 5px;
+      padding-left: 13px;
+      padding-right: 13px;
+    }
+    .bg-main{
+      background-position: right;
+    }
+}
+@media screen and (min-width: 1010px) {
+    .hide-1010 {
+        display:inline;
+    }
+    .show-1010 {
+        display: none;
     }
 }
