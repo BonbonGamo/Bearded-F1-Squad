@@ -34,4 +34,33 @@ $(document).ready(function(){
       $('#nav-scrollspy').removeClass('navbar-bg')
     }
   })
+  $('.custom-form').change(function(){
+    if($('#msg-name').val().length < 5 && $('#msg-name').val().length > 0){
+      $('#label-name').addClass('red-text');
+      $('#label-name').removeClass('yellow-text');
+      $('#label-name').text('Name too short!');
+    }else{
+      $('#label-name').removeClass('red-text');
+      $('#label-name').addClass('yellow-text');
+      $('#label-name').text('Name:');
+    }
+    if($('#msg-email').val().indexOf('@') < 0 && $('#msg-email').val().length > 0){
+      $('#label-email').addClass('red-text');
+      $('#label-email').removeClass('yellow-text');
+      $('#label-email').text('Not a email address!');
+    }else{
+      $('#label-email').removeClass('red-text');
+      $('#label-email').addClass('yellow-text');
+      $('#label-email').text('Email: ');
+    }
+    if($('#msg-message').val().length < 5 && $('#msg-message').val().length > 0){
+      $('#label-message').addClass('red-text');
+      $('#label-message').removeClass('yellow-text');
+      $('#label-message').text('Write more!');
+    }else{
+      $('#label-message').removeClass('red-text');
+      $('#label-message').addClass('yellow-text');
+      $('#label-message').text('Message:');
+    }
+  })
 })

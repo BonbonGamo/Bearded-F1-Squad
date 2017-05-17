@@ -1,6 +1,7 @@
-var express = require('express')
-var app = express()
-var path = require('path')
+var express = require('express');
+var app = express();
+var path = require('path');
+var postmark = require('postmark')
 
 var port = process.env.PORT || 3000;
 
@@ -11,6 +12,11 @@ app.use('/build', express.static(__dirname + '/build'))
 app.get('/', function(req, res) {
     res.render('pages/index');
 });
+
+app.post('/message',function(req,res){
+  var data = req.body;
+  
+})
 
 app.listen(port, function () {
   console.log('Example app listening on port: ', port)
