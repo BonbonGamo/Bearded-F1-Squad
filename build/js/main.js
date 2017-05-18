@@ -13,6 +13,11 @@ var guys = [
   {name:'Mika',img:'mika.png',message:''},
 ]
 
+function validateEmail(email) {
+  var re = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+  return re.test(email);
+}
+
 function populateCarousell(arr){
   _.map(arr,function(obj){
     console.log('Append:',obj.name)
@@ -34,8 +39,31 @@ $(document).ready(function(){
       $('#nav-scrollspy').removeClass('navbar-bg')
     }
   })
+  $('#msg-send').click(function(){
+    if(!validateEmail($('#msg-email').val()) || $('#msg-name').val().length < 2 || $('#msg-message').val().length < 5){
+      alert('Check the form and try again!')
+    }else{
+      var data = {
+        name:$('#msg-name').val(),
+        email:$('#msg-email').val(),
+        msg:$('#msg-message').val()
+      }
+      $.ajax({
+        method:'POST',
+        url:'/message',
+        data:data
+      })
+      .done(function(res){
+        alert('Your message has been submitted!')
+      })
+      .fail(function(res){
+        alert('Something went wrong try again!')
+      })
+    }
+  });
+
   $('.custom-form').change(function(){
-    if($('#msg-name').val().length < 5 && $('#msg-name').val().length > 0){
+    if($('#msg-name').val().length < 2 && $('#msg-name').val().length > 0){
       $('#label-name').addClass('red-text');
       $('#label-name').removeClass('yellow-text');
       $('#label-name').text('Name too short!');
@@ -44,7 +72,7 @@ $(document).ready(function(){
       $('#label-name').addClass('yellow-text');
       $('#label-name').text('Name:');
     }
-    if($('#msg-email').val().indexOf('@') < 0 && $('#msg-email').val().length > 0){
+    if(!validateEmail($('#msg-email').val()) && $('#msg-email').val().length > 0){
       $('#label-email').addClass('red-text');
       $('#label-email').removeClass('yellow-text');
       $('#label-email').text('Not a email address!');
