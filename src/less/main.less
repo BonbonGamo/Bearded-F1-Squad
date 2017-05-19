@@ -86,6 +86,11 @@ p{
   background-color: @yellow;
   color:@black;
 }
+.btn-modal{
+  background-color: @red;
+  color:@gray;
+  font-family: @heading_font;
+}
 .centered{
   position: absolute;
   top: 50%;
@@ -253,12 +258,51 @@ p{
 .carousel-inner{
 
 }
+.modal-header{
+  background: @black;
+  color: @yellow;
+}
+.modal-title{
+  font-family: @heading_font
+}
+.modal-body{
+  background: @yellow;
+  color:@black;
+}
+.modal-footer{
+  background: @black;
+  color: @yellow;
+}
 /*FONTS*/
 .white-text{
   color:@gray;
 }
 .red-text{
   color:@red;
+}
+.red-bg{
+  background: @black;
+  border: 2px solid @gray;
+  color:@gray;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 0px 5px @black;
+  position: relative;
+}
+.red-bg-sm{
+  background: @black;
+  border: 2px solid @gray;
+  color:@gray;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 0px 5px @black;
+  position: relative;
+  top:-45px;
+  left:40px;
+}
+.red-bg:hover{
+  color:@yellow;
+  background: @black;
 }
 .yellow-text{
   color:@yellow;
