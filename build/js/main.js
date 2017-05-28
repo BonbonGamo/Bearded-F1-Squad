@@ -4,6 +4,12 @@ var carousel_images = [
   {name:'gal3',caption:'Moottoriurheilu.tv at Czhech republic',position:''},
   {name:'gal4',caption:'Clean car',position:''},
   {name:'gal5',caption:'@Hungaroring',position:''},
+  {name:'gal6',caption:'Lovely view',position:''},
+  {name:'gal7',caption:'Nic/ko',position:''},
+  {name:'gal8',caption:'The coolest place on earth',position:''},
+  {name:'gal9',caption:'Taking a break',position:''},
+  {name:'gal10',caption:'Enjoy the sunset',position:''},
+    {name:'gal11',caption:'Glasses',position:''},
 ]
 var guys = [
   {name:'Juha',img:'juha.png',message:''},
@@ -33,7 +39,7 @@ function populateCarousell(arr){
 $(document).ready(function(){
   populateCarousell(carousel_images);
   $(window).scroll(function(){
-    if($(window).scrollTop() > 50){
+    if($(window).scrollTop() > 10){
       $('#nav-scrollspy').addClass('navbar-bg')
     }else{
       $('#nav-scrollspy').removeClass('navbar-bg')

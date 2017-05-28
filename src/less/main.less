@@ -79,8 +79,25 @@ p{
 	border-top: 140px solid @red;
 	border-right: 2400px solid transparent;
 }
+#triangle-topleft-yellow {
+  z-index:999;
+  display:block;
+  overflow: hidden;
+  top:0px;
+  right:0px;
+	width: 100%;
+	height: 0px;
+	border-top: 140px solid @yellow;
+	border-right: 2400px solid transparent;
+}
 .black-bottom{
   border-bottom: 4px solid @red;
+}
+.big-shadow{
+  text-shadow:6px 6px 0px @black
+}
+.medium-shadow{
+  text-shadow:1px 1px 5px @black
 }
 .btn-send{
   background-color: @yellow;
@@ -100,8 +117,21 @@ p{
 .custom-form{
   background-color: rgba(255,255,255,0.5)
 }
+.custom-hr{
+  background-color: @gray;
+  height:3px;
+}
+.custom-well{
+  background: @black;
+  color:@yellow;
+  border-radius: 3px;
+  border: none;
+}
+.fa-spin-hover:hover {
+    animation: fa-spin 10s infinite linear;
+}
 .footer-row{
-  font-size: 16px;
+  font-size: 12px;
   color:@yellow;
 }
 .guy-well{
@@ -140,7 +170,7 @@ p{
   background-position: top;
 }
 .main-box{
-  background-color: rgba(0,0,0,0.4)
+  /* background-color: rgba(0,0,0,0.4) */
 }
 .mega{
   font-size: 80px;
@@ -179,6 +209,23 @@ p{
 }
 .red-bottom{
    border-bottom: 3px solid @red;
+}
+.btn-some{
+  max-width: 300px;
+  min-width: 200px;
+  background: @red;
+  color:white;
+  font-size: 24px;
+  text-align: left;
+  padding:4px;
+  padding-left: 13px;
+  font-family: @heading_font;
+}
+.some-ico{
+  font-size:40px;
+}
+.btn-some:hover{
+  color:@yellow;
 }
 /*backgrounds*/
 .bg-black{
@@ -236,6 +283,9 @@ p{
   margin:10px;
 }
 .m20{
+  margin:20px;
+}
+.m30{
   margin:20px;
 }
 /*CAROUSEL*/
@@ -350,6 +400,7 @@ p{
 @media screen and (max-width: 1010px) {
     .hide-1010 {
         display: none;
+        height:0px !important;
     }
     .show-1010 {
         display:inline;
