@@ -13,6 +13,8 @@
 @mega_font: 'Fredoka One', cursive;
 @parag_font: 'Coda', cursive;
 
+@hshadow:@black;
+
 body{
   background-color: @black;
 }
@@ -127,6 +129,16 @@ p{
   border-radius: 3px;
   border: none;
 }
+.finger-halo{
+  background-color: @yellow;
+  color:@black;
+  border-radius: 70px;
+  padding:30px;
+  display: block;
+  font-size: 70px;
+  width:140px;
+  height: 140px;
+}
 .fa-spin-hover:hover {
     animation: fa-spin 10s infinite linear;
 }
@@ -170,7 +182,12 @@ p{
   background-position: top;
 }
 .main-box{
-  /* background-color: rgba(0,0,0,0.4) */
+  min-height: 700px;
+  background: rgba(0,0,0,0.4); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(right top,rgba(0,0,0,0.0), @hshadow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right top,rgba(0,0,0,0.0), @hshadow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right top,rgba(0,0,0,0.0), @hshadow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(right top,rgba(0,0,0,0.0), @hshadow); /* Standard syntax */
 }
 .mega{
   font-size: 80px;
@@ -363,6 +380,11 @@ p{
   margin-left: 0px;
   margin-right: 0px;
 }
+.coda{
+  font-family: @parag_font;
+  color: @yellow;
+  text-align: justify;
+}
 .custom-form::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: @gray;
 }
@@ -398,9 +420,19 @@ p{
   }
 }
 @media screen and (max-width: 1010px) {
+    .main-box{
+      background: rgba(0,0,0,0.4); /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(rgba(0,0,0,0.0), @hshadow); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(rgba(0,0,0,0.0), @hshadow); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(rgba(0,0,0,0.0), @hshadow); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(rgba(0,0,0,0.0), @hshadow); /* Standard syntax */
+    }
     .hide-1010 {
         display: none;
         height:0px !important;
+    }
+    .main-box{
+      min-height: 500px;
     }
     .show-1010 {
         display:inline;
