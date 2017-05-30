@@ -9,7 +9,10 @@ var carousel_images = [
   {name:'gal8',caption:'The coolest place on earth',position:''},
   {name:'gal9',caption:'Taking a break',position:''},
   {name:'gal10',caption:'Enjoy the sunset',position:''},
-    {name:'gal11',caption:'Glasses',position:''},
+  {name:'gal11',caption:'Glasses',position:''},
+  {name:'gal12',caption:'Gang all suited up!',position:''},
+  {name:'gal13',caption:'Where is Anssi?!',position:''},
+  {name:'gal14',caption:'I like smoke',position:''},
 ]
 var guys = [
   {name:'Juha',img:'juha.png',message:''},
